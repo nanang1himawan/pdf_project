@@ -16,9 +16,10 @@ use App\Http\Controllers\ProductController;
 */
     Route::get('/pegawai', 'App\Http\Controllers\PegawaiController@index');
     Route::get('/pegawai/cetak_pdf', 'App\Http\Controllers\PegawaiController@cetak_pdf');
-    Route::get('/pegawai/cetak_pdf_detail', 'App\Http\Controllers\PegawaiController@cetak_pdf_detail');
-    Route::get('/pegawai/export_excel', 'App\Http\Controllers\PegawaiController@export_excel');
     Route::get('/pegawai/{detail}', 'App\Http\Controllers\PegawaiController@detail');
+    Route::get('/pegawai/cetak_pdf_detail/{pegawai_pdf_detail}', 'App\Http\Controllers\PegawaiController@cetak_pdf_detail');
+    Route::get('/pegawai/export_excel', 'App\Http\Controllers\PegawaiController@export_excel');
+    
     Route::get('/generate-barcode', [ProductController::class, 'index'])->name('generate.barcode');
    
    

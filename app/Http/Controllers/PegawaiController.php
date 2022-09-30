@@ -25,9 +25,17 @@ class PegawaiController extends Controller
     	return $pdf->stream('laporan-pegawai-pdf');
     }
 
-    public function cetak_pdf_detail(Pegawaii $detail)
+    public function cetak_pdf_detail(Pegawaii $pegawai_pdf_detail)
     {
-    	$pdf = PDF::loadview('pegawai_pdf_detail',["detail"=>$detail]);
+
+        // return view('pegawai_pdf_detail', [
+        //     "pegawai_pdf_detail" => $pegawai_pdf_detail
+        // ]);
+
+
+    	$pdf = PDF::loadview('pegawai_pdf_detail',[
+            "pegawai_pdf_detail"=>$pegawai_pdf_detail
+        ]);
         $pdf->setPaper('legal', 'landscape');
     	return $pdf->stream('laporan-pegawai-pdf-detail');
     }
